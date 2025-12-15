@@ -1,0 +1,229 @@
+body{background-color: #FFFEF7}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    min-height: 120px;
+    background: linear-gradient(
+            to bottom,
+            #CDE8E0 0%,
+            #FFFEF7 100%
+    );
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.1rem 1rem; /* mindre top/bund, samme venstre/højre */
+    position: relative;
+}
+
+/* logo */
+.logo img {
+    height: 100px;
+    min-height: 40px;
+    width: auto;
+    display: block;
+}
+
+/* Nav */
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 4rem;
+    margin-right: 2rem;
+}
+
+.nav-links a {
+    color: #000000;
+    text-decoration: none;
+    font-family: "playfair display", serif;
+    font-size: 1.2rem;
+}
+
+/* burger menu */
+
+#menu-toggle {
+    display: none;
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.burger span {
+    width: 25px;
+    height: 3px;
+    background: #000000;
+}
+
+/* mobil version */
+
+@media (max-width: 768px) {
+
+    .burger {
+        display: flex;
+    }
+
+    .nav-links {
+        text-align: right;
+        position: absolute;
+        top: 100%;
+        right: 1rem;
+        background: linear-gradient(
+                to bottom,
+                #CDE8E0 0%,
+                #FFFEF7 100%
+        );
+        flex-direction: column;
+        width: 200px;
+        display: none;
+        padding: 1rem;
+    }
+
+    #menu-toggle:checked + .burger + .nav-links {
+        display: flex;
+    }
+}
+
+/* desktop version */
+
+@media (min-width: 769px) {
+
+    .logo img {
+        height: 160px;
+        margin-left: 1rem;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        position: static;
+        flex-direction: row;
+    }
+}
+
+/* footer - mobil først */
+
+footer {
+    display: flex;
+    flex-direction: column;       /* mobil: alt under hinanden */
+    align-items: center;
+    text-align: center;
+
+    padding: 3rem 4rem;
+
+    background: linear-gradient(
+            to bottom,
+            #FFFEF7 0%,
+            #CDE8E0 100%
+    );
+}
+
+/* tekstblok */
+
+.footer-text {
+    max-width: 520px;
+}
+
+/* typografi */
+
+.serif {
+    font-family: "Playfair Display", serif;
+}
+
+.serif p:first-child {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.sans-serif {
+    font-family: "Open Sans", sans-serif;
+    color: #3a3a3a;
+    line-height: 1.6;
+}
+
+/* knap */
+
+.footer-button button {
+    margin-top: 1rem;
+    padding: 0.75rem 1.75rem;
+
+    background: #6ABDA8;
+    border: none;
+    border-radius: 999px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* SoMe */
+
+.SoMe {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+.SoMe a svg {
+    width: 40px;
+    height: 40px;
+    fill: #5a5a5a;
+    transition: fill 0.2s ease;
+}
+
+.SoMe a:hover svg {
+    fill: #6ABDA8;
+}
+
+/* logo */
+
+.footer-logo {
+    margin-top: 2rem;
+}
+
+.footer-logo img {
+    max-width: 260px;
+    height: auto;
+}
+
+/* -------------------- */
+/* DESKTOP VERSION */
+/* -------------------- */
+
+@media (min-width: 769px) {
+
+    footer {
+        flex-direction: row; /* tekst venstre, logo højre */
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .footer-text {
+        max-width: 520px;
+    }
+
+    .SoMe {
+        justify-content: flex-start;
+    }
+
+    .footer-logo {
+        margin-top: 0;
+    }
+}
+
