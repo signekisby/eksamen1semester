@@ -13,15 +13,12 @@ body{background-color: #FFFEF7}
             #CDE8E0 0%,
             #FFFEF7 100%
     );
+
+    position: relative;
+    z-index: 9999;      /*  over hero */
 }
 
-.nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.1rem 1rem; /* mindre top/bund, samme venstre/højre */
-    position: relative;
-}
+
 
 /* logo */
 .logo img {
@@ -32,12 +29,19 @@ body{background-color: #FFFEF7}
 }
 
 /* Nav */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 0.1rem 3rem;
+}
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 4rem;
-    margin-right: 2rem;
+    gap: 50px;
+    padding: 0 1rem;
 }
 
 .nav-links a {
@@ -48,16 +52,21 @@ body{background-color: #FFFEF7}
 }
 
 /* burger menu */
-
 #menu-toggle {
     display: none;
 }
 
 .burger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
     display: none;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
+
+    z-index: 10001;    /*  over header + hero */
 }
 
 .burger span {
@@ -66,14 +75,10 @@ body{background-color: #FFFEF7}
     background: #000000;
 }
 
-
-
-
 /* forside billede 1 */
-
 .hero{
     position: relative;
-    min-height: 90vh;              /* justér efter behov */
+    min-height: 90vh;
     display: grid;
     place-items: center;
     padding: 56px 16px;
@@ -85,7 +90,7 @@ body{background-color: #FFFEF7}
     position: absolute;
     inset: 0;
     width: 100%;
-    height: 100%;      /* VIGTIGT: ikke auto */
+    height: 100%;
     object-fit: cover;
     z-index: 0;
 }
@@ -100,8 +105,8 @@ body{background-color: #FFFEF7}
             rgba(255, 254, 247, 0.55),
             rgba(102, 41, 87, 0.65)
     );
+    pointer-events: none; /* ✅ så den ikke “dækker” menu */
 }
-
 
 /* Alt indhold skal ligge over overlay */
 .hero-inner{
@@ -113,8 +118,6 @@ body{background-color: #FFFEF7}
     justify-items: center;
     text-align: center;
 }
-
-
 
 /* Boksen bag overskrift + tekst */
 .hero-box{
@@ -143,7 +146,6 @@ body{background-color: #FFFEF7}
     line-height: 1.45;
 }
 
-
 /* Knapper */
 .hero-cta{
     min-width: 250px;
@@ -151,10 +153,9 @@ body{background-color: #FFFEF7}
     margin-inline: auto;
 
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr)); /* ALTID 2 kolonner */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
-    }
-
+}
 
 .btn{
     display: grid;
@@ -181,13 +182,7 @@ body{background-color: #FFFEF7}
     box-shadow: 0 14px 30px rgba(0,0,0,0.18);
 }
 
-
-
-
-
-
 /* Hvorfor Connected Starters tekst */
-
 h2{
     font-size: clamp(2rem, 4.2vw, 3.4rem);
     margin-top: 60px;
@@ -200,19 +195,11 @@ main p{
     font-family: "open sans", sans-serif;
 }
 
-
-
-
-
-
-
-
 /* forside billede 2 */
-
 .section-image{
     margin-top: 60px;
     position: relative;
-    min-height: 90vh;              /* justér efter behov */
+    min-height: 90vh;
     display: grid;
     place-items: center;
     padding: 56px 16px;
@@ -224,7 +211,7 @@ main p{
     position: absolute;
     inset: 0;
     width: 100%;
-    height: 100%;      /* VIGTIGT: ikke auto */
+    height: 100%;
     object-fit: cover;
     z-index: 0;
 }
@@ -239,8 +226,8 @@ main p{
             rgba(255, 254, 247, 0.55),
             rgba(102, 41, 87, 0.65)
     );
+    pointer-events: none; /* ✅ samme fix her */
 }
-
 
 /* Alt indhold skal ligge over overlay */
 .section-inner{
@@ -252,8 +239,6 @@ main p{
     justify-items: center;
     text-align: center;
 }
-
-
 
 /* Boksen bag overskrift + tekst */
 .section-box{
@@ -282,44 +267,30 @@ main p{
     line-height: 1.45;
 }
 
-
 /* Knapper */
-
 .section-cta{
     min-width: 250px;
     min-height: 100px;
     margin-inline: auto;
 
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /* ALTID 2 kolonner */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
 }
 
-
-
-
-
-
 /* Sponsorer tekst */
-
 main h3 {
-    font-size: clamp(1.3rem, 1.5vw, 1.35rem);
+    font-size: clamp(1.2rem, 1.5vw, 1.35rem);
     font-weight: bold;
     font-family: "open sans", sans-serif;
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
-
-
-
-
-
 /* footer - mobil først */
-
 footer {
     display: flex;
-    flex-direction: column; /* mobil: alt under hinanden */
+    flex-direction: column;
     align-items: center;
     text-align: center;
 
@@ -333,17 +304,10 @@ footer {
     margin-top: 80px;
 }
 
-/* tekstblok */
-
-.footer-text {
-    max-width: 520px;
-}
+.footer-text { max-width: 520px; }
 
 /* typografi */
-
-.serif {
-    font-family: "Playfair Display", serif;
-}
+.serif { font-family: "Playfair Display", serif; }
 
 .serif p:first-child {
     font-size: 1.3rem;
@@ -359,23 +323,30 @@ footer {
 
 /* knap */
 
-.footer-button button {
-    margin-top: 1rem;
+.btn-link {
+    margin-top: 5px;
+    display: inline-block;
     padding: 0.75rem 1.75rem;
 
     background: #6ABDA8;
-    border: none;
     border-radius: 999px;
 
     font-family: "Playfair Display", serif;
     font-size: 0.9rem;
-    cursor: pointer;
     color: #000000;
-    text-underline: none;
+    text-decoration: none;
+    cursor: pointer;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* SoMe */
+.btn-link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
 
+
+/* SoMe */
 .SoMe {
     display: flex;
     justify-content: center;
@@ -395,58 +366,50 @@ footer {
 }
 
 /* logo */
-
-.footer-logo {
-    margin-top: 0.1rem;
-}
+.footer-logo { margin-top: 0.1rem; }
 
 .footer-logo img {
     max-width: 260px;
     height: auto;
 }
 
-
-
-
-
-
 /* -------------------- */
 /* Mobilversion */
 /* -------------------- */
-
 @media (max-width: 780px) {
     .btn{ min-height: 76px; max-width: 200px; font-size: 1.15rem;}
-    .plain h2{
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-    .plain p{
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-    .plain h3{
-        margin-left: 20px;
-        margin-right: 20px;
-    }
 
-    .burger {
-        display: flex;
-    }
+    .plain h2{ margin-left: 20px; margin-right: 20px; }
+    .plain p{ margin-left: 20px; margin-right: 20px; }
+    .plain h3{ margin-left: 20px; margin-right: 20px; }
+
+    .burger { display: flex; }
 
     .nav-links {
-        text-align: right;
-        position: absolute;
-        top: 100%;
-        right: 1rem;
+        position: fixed;
+        top: 64px;
+        right: 10px;
+        margin-right: 0;
+
+        text-align: right;   /* teksten til højre */
+        align-items: flex-end; /* links flugter højre i flex */
+
+        width: 220px;
+        padding: 1.5rem;
+
+        display: none;
+        flex-direction: column;
+        gap: 1.5rem;
+
         background: linear-gradient(
                 to bottom,
                 #CDE8E0 0%,
                 #FFFEF7 100%
         );
-        flex-direction: column;
-        width: 200px;
-        display: none;
-        padding: 1rem;
+
+        z-index: 10000;             /* under burger, over hero */
+        border-radius: 12px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     }
 
     #menu-toggle:checked + .burger + .nav-links {
@@ -454,32 +417,25 @@ footer {
     }
 }
 
-
-
 /* -------------------- */
 /* DESKTOP VERSION */
 /* -------------------- */
-
 @media (min-width: 780px) {
     .logo img {
         height: 160px;
         margin-left: 1rem;
     }
 
-    .burger {
-        display: none;
-    }
+    .burger { display: none; }
 
     .nav-links {
         display: flex;
-        position: static;
         flex-direction: row;
     }
 
     .btn{ min-height: 150px;}
-    .hero-box h1{
-        font-size: 3.5rem;
-    }
+
+    .hero-box h1{ font-size: 3.5rem; }
 
     .plain h2{
         font-size: 3.5rem;
@@ -487,9 +443,7 @@ footer {
         margin-right: 120px;
     }
 
-    .hero-box p{
-        font-size: 1.4rem;
-    }
+    .hero-box p{ font-size: 1.4rem; }
 
     .plain p{
         font-size: 1.2rem;
@@ -504,24 +458,19 @@ footer {
     }
 
     footer {
-        flex-direction: row; /* tekst venstre, logo højre */
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         text-align: left;
     }
 
-    .footer-text {
-        max-width: 520px;
-    }
+    .footer-text { max-width: 520px; }
 
-    .SoMe {
-        justify-content: flex-start;
-    }
+    .SoMe { justify-content: flex-start; }
 
-    .footer-logo {
-        margin-top: 0;
-    }
+    .footer-logo { margin-top: 0; }
 }
+
 
 
 
