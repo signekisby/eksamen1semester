@@ -66,56 +66,6 @@ body{background-color: #FFFEF7}
     background: #000000;
 }
 
-/* mobil version */
-
-@media (max-width: 780px) {
-
-    .burger {
-        display: flex;
-    }
-
-    .nav-links {
-        text-align: right;
-        position: absolute;
-        top: 100%;
-        right: 1rem;
-        background: linear-gradient(
-                to bottom,
-                #CDE8E0 0%,
-                #FFFEF7 100%
-        );
-        flex-direction: column;
-        width: 200px;
-        display: none;
-        padding: 1rem;
-    }
-
-    #menu-toggle:checked + .burger + .nav-links {
-        display: flex;
-    }
-}
-
-/* desktop version */
-
-@media (min-width: 780px) {
-
-    .logo img {
-        height: 160px;
-        margin-left: 1rem;
-    }
-
-    .burger {
-        display: none;
-    }
-
-    .nav-links {
-        display: flex;
-        position: static;
-        flex-direction: row;
-    }
-}
-
-
 
 
 
@@ -254,51 +204,7 @@ main p{
 
 
 
-/* Mobil */
-@media (max-width: 780px){
-    .btn{ min-height: 76px; max-width: 200px; font-size: 1.15rem;}
-    .plain h2{
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-    .plain p{
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-    .plain h3{
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-}
 
-@media (min-width: 780px){
-    .btn{ min-height: 150px;}
-    .hero-box h1{
-        font-size: 3.5rem;
-    }
-
-    .plain h2{
-        font-size: 3.5rem;
-        margin-left: 120px;
-        margin-right: 120px;
-    }
-
-    .hero-box p{
-        font-size: 1.4rem;
-    }
-
-    .plain p{
-        font-size: 1.2rem;
-        margin-left: 120px;
-        margin-right: 120px;
-    }
-
-    .plain h3 {
-        font-size: 1.8rem;
-        margin-left: 120px;
-        margin-right: 120px;
-    }
-}
 
 
 /* forside billede 2 */
@@ -409,117 +315,215 @@ main h3 {
 
 
 
-    /* footer - mobil først */
+/* footer - mobil først */
 
-    footer {
-        display: flex;
-        flex-direction: column;       /* mobil: alt under hinanden */
-        align-items: center;
-        text-align: center;
+footer {
+    display: flex;
+    flex-direction: column; /* mobil: alt under hinanden */
+    align-items: center;
+    text-align: center;
 
-        padding: 3rem 4rem;
+    padding: 3rem 4rem;
 
-        background: linear-gradient(
-                to bottom,
-                #FFFEF7 0%,
-                #CDE8E0 100%
-        );
-        margin-top: 80px;
+    background: linear-gradient(
+            to bottom,
+            #FFFEF7 0%,
+            #CDE8E0 100%
+    );
+    margin-top: 80px;
+}
+
+/* tekstblok */
+
+.footer-text {
+    max-width: 520px;
+}
+
+/* typografi */
+
+.serif {
+    font-family: "Playfair Display", serif;
+}
+
+.serif p:first-child {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.sans-serif {
+    font-family: "Open Sans", sans-serif;
+    color: #3a3a3a;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+/* knap */
+
+.footer-button button {
+    margin-top: 1rem;
+    padding: 0.75rem 1.75rem;
+
+    background: #6ABDA8;
+    border: none;
+    border-radius: 999px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: #000000;
+    text-underline: none;
+}
+
+/* SoMe */
+
+.SoMe {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+.SoMe a svg {
+    width: 40px;
+    height: 40px;
+    fill: #5a5a5a;
+    transition: fill 0.2s ease;
+}
+
+.SoMe a:hover svg {
+    fill: #6ABDA8;
+}
+
+/* logo */
+
+.footer-logo {
+    margin-top: 0.1rem;
+}
+
+.footer-logo img {
+    max-width: 260px;
+    height: auto;
+}
+
+
+
+
+
+
+/* -------------------- */
+/* Mobilversion */
+/* -------------------- */
+
+@media (max-width: 780px) {
+    .btn{ min-height: 76px; max-width: 200px; font-size: 1.15rem;}
+    .plain h2{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .plain p{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .plain h3{
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
-    /* tekstblok */
+    .burger {
+        display: flex;
+    }
+
+    .nav-links {
+        text-align: right;
+        position: absolute;
+        top: 100%;
+        right: 1rem;
+        background: linear-gradient(
+                to bottom,
+                #CDE8E0 0%,
+                #FFFEF7 100%
+        );
+        flex-direction: column;
+        width: 200px;
+        display: none;
+        padding: 1rem;
+    }
+
+    #menu-toggle:checked + .burger + .nav-links {
+        display: flex;
+    }
+}
+
+
+
+/* -------------------- */
+/* DESKTOP VERSION */
+/* -------------------- */
+
+@media (min-width: 780px) {
+    .logo img {
+        height: 160px;
+        margin-left: 1rem;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        position: static;
+        flex-direction: row;
+    }
+
+    .btn{ min-height: 150px;}
+    .hero-box h1{
+        font-size: 3.5rem;
+    }
+
+    .plain h2{
+        font-size: 3.5rem;
+        margin-left: 120px;
+        margin-right: 120px;
+    }
+
+    .hero-box p{
+        font-size: 1.4rem;
+    }
+
+    .plain p{
+        font-size: 1.2rem;
+        margin-left: 120px;
+        margin-right: 120px;
+    }
+
+    .plain h3 {
+        font-size: 1.8rem;
+        margin-left: 120px;
+        margin-right: 120px;
+    }
+
+    footer {
+        flex-direction: row; /* tekst venstre, logo højre */
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
 
     .footer-text {
         max-width: 520px;
     }
 
-    /* typografi */
-
-    .serif {
-        font-family: "Playfair Display", serif;
-    }
-
-    .serif p:first-child {
-        font-size: 1.5rem;
-        font-weight: 600;
-    }
-
-    .sans-serif {
-        font-family: "Open Sans", sans-serif;
-        color: #3a3a3a;
-        line-height: 1.6;
-    }
-
-    /* knap */
-
-    .footer-button button {
-        margin-top: 1rem;
-        padding: 0.75rem 1.75rem;
-
-        background: #6ABDA8;
-        border: none;
-        border-radius: 999px;
-
-        font-family: "Playfair Display", serif;
-        font-size: 1rem;
-        cursor: pointer;
-    }
-
-    /* SoMe */
-
     .SoMe {
-        display: flex;
-        justify-content: center;
-        gap: 1.25rem;
-        margin-top: 1rem;
+        justify-content: flex-start;
     }
-
-    .SoMe a svg {
-        width: 40px;
-        height: 40px;
-        fill: #5a5a5a;
-        transition: fill 0.2s ease;
-    }
-
-    .SoMe a:hover svg {
-        fill: #6ABDA8;
-    }
-
-    /* logo */
 
     .footer-logo {
-        margin-top: 0.1rem;
+        margin-top: 0;
     }
+}
 
-    .footer-logo img {
-        max-width: 260px;
-        height: auto;
-    }
 
-    /* -------------------- */
-    /* DESKTOP VERSION */
-    /* -------------------- */
 
-    @media (min-width: 780px) {
-
-        footer {
-            flex-direction: row; /* tekst venstre, logo højre */
-            justify-content: space-between;
-            align-items: center;
-            text-align: left;
-        }
-
-        .footer-text {
-            max-width: 520px;
-        }
-
-        .SoMe {
-            justify-content: flex-start;
-        }
-
-        .footer-logo {
-            margin-top: 0;
-        }
-    }
 
 
