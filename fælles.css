@@ -6,6 +6,12 @@ body{background-color: #FFFEF7}
     box-sizing: border-box;
 }
 
+
+
+/* -------------------- */
+/* HEADER */
+/* -------------------- */
+
 .header {
     min-height: 120px;
     background: linear-gradient(
@@ -148,8 +154,6 @@ body{background-color: #FFFEF7}
 
 /* Knapper */
 .hero-cta{
-    min-width: 250px;
-    min-height: 100px;
     margin-inline: auto;
 
     display: grid;
@@ -161,7 +165,7 @@ body{background-color: #FFFEF7}
     display: grid;
     place-items: center;
     padding: 22px 18px;
-    min-height: 96px;
+    
 
     background: #6ABDA8;
     color: #000000;
@@ -195,7 +199,12 @@ main p{
     font-family: "open sans", sans-serif;
 }
 
-/* forside billede 2 */
+
+
+
+/* -------------------- */
+/* FORSIDE BILLEDE 2 */
+/* -------------------- */
 .section-image{
     margin-top: 60px;
     position: relative;
@@ -226,7 +235,7 @@ main p{
             rgba(255, 254, 247, 0.55),
             rgba(102, 41, 87, 0.65)
     );
-    pointer-events: none; /* ✅ samme fix her */
+    pointer-events: none;
 }
 
 /* Alt indhold skal ligge over overlay */
@@ -287,7 +296,107 @@ main h3 {
     margin-bottom: 5px;
 }
 
-/* footer - mobil først */
+
+
+
+
+/* -------------------- */
+/* KONTAKT underside */
+/* -------------------- */
+
+main h1{
+    font-size: clamp(2rem, 4.2vw, 3.4rem);
+    margin-top: 40px;
+    font-family: "playfair display",serif;
+}
+
+.tekst1{
+    margin-top: 40px;
+}
+
+.mere-afstand{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.mere-afstand2 {
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.SoMe-ikon a img {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    width: 60px;
+    height: auto;
+}
+
+.SoMe-ikon a img:hover {
+  transform: scale(1.05);
+}
+
+.section-kort {
+    position: relative;
+    max-width: 100%;
+    margin-top: 15px;
+}
+
+.kort-baggrund {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.kort-knapper {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.kort-knap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6ABDA8;
+    color: #000;
+    padding: 40px 30px;
+    min-height: 105px;
+    font-weight: bold;
+    border-radius: 22px;
+    text-decoration: none;
+    font-size: 1.35rem;
+    min-width: 350px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kort-knap:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+
+.section-kort::after{
+     content:"";
+     position:absolute;
+     inset:0;
+    z-index:1;
+    background: linear-gradient(
+             rgba(255, 254, 247, 0.55),
+             rgba(102, 41, 87, 0.65)   );
+     pointer-events: none;
+    }
+
+
+/* -------------------- */
+/* FOOTER */
+/* -------------------- */
+
 footer {
     display: flex;
     flex-direction: column;
@@ -377,11 +486,34 @@ footer {
 /* Mobilversion */
 /* -------------------- */
 @media (max-width: 780px) {
-    .btn{ min-height: 76px; max-width: 200px; font-size: 1.15rem;}
+    .btn{ min-height: 50px; max-width: 200px; font-size: 1.15rem;}
+
+    .kort-knap {
+        min-width: auto;
+        width: 90%;
+        max-width: 280px;
+
+        padding: 20px 16px;
+        min-height: 64px;
+        font-size: 1.15rem;
+        border-radius: 16px;
+    }
+
+    .kort-knapper {
+        gap: 1.2rem;
+    }
 
     .plain h2{ margin-left: 20px; margin-right: 20px; }
     .plain p{ margin-left: 20px; margin-right: 20px; }
     .plain h3{ margin-left: 20px; margin-right: 20px; }
+
+    main h2{margin-left: 20px; margin-right: 20px;}
+
+    main h3{ margin-left: 20px; margin-right: 20px; }
+
+    .section-kort{margin-left: 20px; margin-right: 20px;}
+
+    .SoMe-ikon a img{margin-left: 20px}
 
     .burger { display: flex; }
 
@@ -392,7 +524,7 @@ footer {
         margin-right: 0;
 
         text-align: right;   /* teksten til højre */
-        align-items: flex-end; /* links flugter højre i flex */
+        align-items: flex-end; /* links til højre */
 
         width: 220px;
         padding: 1.5rem;
@@ -415,6 +547,8 @@ footer {
     #menu-toggle:checked + .burger + .nav-links {
         display: flex;
     }
+
+    main h1{margin-left: 20px; margin-right: 20px;}
 }
 
 /* -------------------- */
@@ -433,7 +567,7 @@ footer {
         flex-direction: row;
     }
 
-    .btn{ min-height: 150px;}
+    .btn{ min-height: 120px;}
 
     .hero-box h1{ font-size: 3.5rem; }
 
@@ -442,6 +576,13 @@ footer {
         margin-left: 120px;
         margin-right: 120px;
     }
+
+    main h2 {
+        font-size: 3.5rem;
+        margin-left: 120px;
+        margin-right: 120px;
+    }
+
 
     .hero-box p{ font-size: 1.4rem; }
 
@@ -453,6 +594,25 @@ footer {
 
     .plain h3 {
         font-size: 1.8rem;
+        margin-left: 120px;
+        margin-right: 120px;
+    }
+
+    main h3{
+        font-size: 1.8rem;
+        margin-left: 120px;
+        margin-right: 120px;
+    }
+
+    .SoMe-ikon a img{margin-left: 120px}
+
+    main h1{
+        font-size: 3.5rem;
+        margin-left: 120px;
+        margin-right: 120px;
+    }
+
+    .section-kort {
         margin-left: 120px;
         margin-right: 120px;
     }
