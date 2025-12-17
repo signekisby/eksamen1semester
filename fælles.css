@@ -91,7 +91,7 @@ body{background-color: #FFFEF7}
     overflow: hidden;
 }
 
-/* Baggrundsbillede (dit <img>) */
+/* Baggrundsbillede (mit <img>) */
 .hero-bg{
     position: absolute;
     inset: 0;
@@ -111,7 +111,7 @@ body{background-color: #FFFEF7}
             rgba(255, 254, 247, 0.55),
             rgba(102, 41, 87, 0.65)
     );
-    pointer-events: none; /* ✅ så den ikke “dækker” menu */
+    pointer-events: none;
 }
 
 /* Alt indhold skal ligge over overlay */
@@ -199,6 +199,10 @@ main p{
     font-family: "open sans", sans-serif;
 }
 
+main h2{
+    font-family: "playfair display",serif;
+}
+
 
 
 
@@ -215,7 +219,7 @@ main p{
     overflow: hidden;
 }
 
-/* Baggrundsbillede (dit <img>) */
+/* Baggrundsbillede */
 .image-bg{
     position: absolute;
     inset: 0;
@@ -301,6 +305,157 @@ main h3 {
 
 
 /* -------------------- */
+/* EVENTS underside */
+/* -------------------- */
+.event {
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-top: 60px;
+}
+
+/* Wrapper til billedet + overlay + gennemsigtig boks */
+.article-box {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+/* Baggrundsbillede */
+.article-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Overlay ovenpå billedet (ikke ovenpå teksten) */
+.article-box::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+            rgba(255, 254, 247, 0.55),
+            rgba(102, 41, 87, 0.65)
+    );
+    pointer-events: none;
+}
+
+/* Glas-boks til titel + undertitel */
+.article-inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+    width: min(560px, 90%);
+    padding: 26px 28px;
+    border-radius: 18px;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Titel i boksen */
+.article-inner h2 {
+    margin: 0;
+    line-height: 1.1;
+}
+
+/* Undertitel */
+.event-subtitle {
+    margin: 10px 0 0;
+    line-height: 1.2;
+}
+
+.bold-serif{
+    font-weight: bold;
+    font-family: "playfair display", serif;
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.event a{
+    text-decoration: none;
+    color: #38806E;
+    font-style: italic;
+    font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+}
+
+
+
+
+
+
+.signup-fade {
+    margin-top: 50px;
+    padding: 4rem 1rem;
+    text-align: center;
+
+    /* 3-punkts gradient: hvid → lilla → hvid */
+    background: linear-gradient(
+            to right,
+            #FFFEF7 0%,
+            rgba(102, 41, 87, 0.86) 50%,
+            #FFFEF7 100%
+    );
+}
+
+/* CTA-knap */
+.signup-button {
+    display: inline-block;
+    background-color: #6ABDA8;
+    color: #000;
+    padding: 25px 28px;
+    border-radius: 22px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.signup-button:hover,
+.signup-button:focus-visible{
+    transform: scale(1.05);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+}
+
+.signup-fade a{
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: "playfair display", serif;
+}
+
+/* Tekst under knappen */
+.signup-note {
+    margin-top: 1.5rem;
+    font-style: italic;
+    font-size: 1.1rem;
+    font-weight: 550;
+}
+
+.top-afstand{margin-top: 30px}
+
+.plain a{
+    text-decoration: none;
+    color: #38806E;
+    font-style: italic;
+    font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+}
+
+
+
+
+
+
+
+
+/* -------------------- */
 /* KONTAKT underside */
 /* -------------------- */
 
@@ -345,6 +500,7 @@ main h1{
     width: 100%;
     height: auto;
     display: block;
+    opacity: 50%;
 }
 
 .kort-knapper {
@@ -410,7 +566,7 @@ footer {
             #FFFEF7 0%,
             #CDE8E0 100%
     );
-    margin-top: 80px;
+    margin-top: 100px;
 }
 
 .footer-text { max-width: 520px; }
@@ -431,7 +587,6 @@ footer {
 }
 
 /* knap */
-
 .btn-link {
     margin-top: 5px;
     display: inline-block;
@@ -507,6 +662,9 @@ footer {
     .plain p{ margin-left: 20px; margin-right: 20px; }
     .plain h3{ margin-left: 20px; margin-right: 20px; }
 
+    .plain a{margin-left: 20px; margin-right: 20px;}
+
+
     main h2{margin-left: 20px; margin-right: 20px;}
 
     main h3{ margin-left: 20px; margin-right: 20px; }
@@ -549,6 +707,26 @@ footer {
     }
 
     main h1{margin-left: 20px; margin-right: 20px;}
+
+    .event{margin-left: 20px; margin-right: 20px;}
+
+    .article-media {
+        aspect-ratio: 4 / 3;  /* lidt højere billede på mobil */
+    }
+
+    .article-inner {
+        width: min(520px, 92%);
+        padding: 18px 16px;
+        border-radius: 16px;
+    }
+
+    .article-inner h2 {
+        font-size: 1.6rem;
+    }
+
+    .event-subtitle {
+        font-size: 1rem;
+    }
 }
 
 /* -------------------- */
@@ -591,6 +769,12 @@ footer {
         margin-left: 120px;
         margin-right: 120px;
     }
+
+    .plain a{
+        margin-left: 120px;
+        margin-right: 120px;
+    }
+
 
     .plain h3 {
         font-size: 1.8rem;
