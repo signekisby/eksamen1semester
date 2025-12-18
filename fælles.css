@@ -1,8 +1,8 @@
 body{background-color: #FFFEF7}
 
-* {
-    margin: 0;
-    padding: 0;
+* {                             /* alle elementer */
+    margin: 0;                  /* nulstiller browser-defaults */
+    padding: 0;                 /* nulstiller browser-defaults */
     box-sizing: border-box;
 }
 
@@ -23,7 +23,6 @@ body{background-color: #FFFEF7}
     position: relative;
     z-index: 9999;      /*  over hero */
 }
-
 
 
 /* logo */
@@ -81,7 +80,10 @@ body{background-color: #FFFEF7}
     background: #000000;
 }
 
-/* forside billede 1 */
+
+/* -------------------- */
+/* FORSIDE BILLEDE 1 */
+/* -------------------- */
 .hero{
     position: relative;
     min-height: 90vh;
@@ -91,7 +93,7 @@ body{background-color: #FFFEF7}
     overflow: hidden;
 }
 
-/* Baggrundsbillede (mit <img>) */
+/* Baggrundsbillede */
 .hero-bg{
     position: absolute;
     inset: 0;
@@ -114,7 +116,7 @@ body{background-color: #FFFEF7}
     pointer-events: none;
 }
 
-/* Alt indhold skal ligge over overlay */
+/*  Indhold over overlay */
 .hero-inner{
     position: relative;
     z-index: 2;
@@ -152,7 +154,7 @@ body{background-color: #FFFEF7}
     line-height: 1.45;
 }
 
-/* Knapper */
+/* Buttons */
 .hero-cta{
     margin-inline: auto;
 
@@ -203,9 +205,6 @@ main h2{
     font-family: "playfair display",serif;
 }
 
-
-
-
 /* -------------------- */
 /* FORSIDE BILLEDE 2 */
 /* -------------------- */
@@ -242,7 +241,7 @@ main h2{
     pointer-events: none;
 }
 
-/* Alt indhold skal ligge over overlay */
+/* Indhold over overlay */
 .section-inner{
     position: relative;
     z-index: 2;
@@ -280,7 +279,7 @@ main h2{
     line-height: 1.45;
 }
 
-/* Knapper */
+/* Buttons */
 .section-cta{
     min-width: 250px;
     min-height: 100px;
@@ -310,7 +309,7 @@ main h3 {
 .event {
     margin-left: 120px;
     margin-right: 120px;
-    margin-top: 60px;
+    margin-top: 50px;
 }
 
 /* Wrapper til billedet + overlay + gennemsigtig boks */
@@ -343,7 +342,7 @@ main h3 {
     pointer-events: none;
 }
 
-/* Glas-boks til titel + undertitel */
+/* Gennemsigtig boks til titel + undertitel */
 .article-inner {
     position: absolute;
     left: 50%;
@@ -375,6 +374,7 @@ main h3 {
     line-height: 1.2;
 }
 
+/* Typografi */
 .bold-serif{
     font-weight: bold;
     font-family: "playfair display", serif;
@@ -389,11 +389,9 @@ main h3 {
     font-size: clamp(1.1rem, 1.5vw, 1.4rem);
 }
 
+.event a:hover{color: #6ABDA8;}
 
-
-
-
-
+/* Tilmeld button */
 .signup-fade {
     margin-top: 50px;
     padding: 4rem 1rem;
@@ -425,6 +423,7 @@ main h3 {
     box-shadow: 0 14px 30px rgba(0,0,0,0.18);
 }
 
+/* Button tekst */
 .signup-fade a{
     font-size: 1.8rem;
     font-weight: bold;
@@ -439,8 +438,10 @@ main h3 {
     font-weight: 550;
 }
 
+/* Afstand */
 .top-afstand{margin-top: 30px}
 
+/* Typografi */
 .plain a{
     text-decoration: none;
     color: #38806E;
@@ -448,7 +449,7 @@ main h3 {
     font-size: clamp(1.1rem, 1.5vw, 1.4rem);
 }
 
-
+.plain a:hover{color: #6ABDA8}
 
 
 
@@ -458,7 +459,6 @@ main h3 {
 /* -------------------- */
 /* KONTAKT underside */
 /* -------------------- */
-
 main h1{
     font-size: clamp(2rem, 4.2vw, 3.4rem);
     margin-top: 40px;
@@ -469,6 +469,7 @@ main h1{
     margin-top: 40px;
 }
 
+/* Afstand */
 .mere-afstand{
     margin-top: 10px;
     margin-bottom: 10px;
@@ -479,6 +480,7 @@ main h1{
     margin-bottom: 10px;
 }
 
+/* SoMe ikoner */
 .SoMe-ikon a img {
     cursor: pointer;
     transition: transform 0.2s ease;
@@ -490,12 +492,14 @@ main h1{
   transform: scale(1.05);
 }
 
+/* Section med baggrundsbillede af kort og 3 buttons ovenpå */
 .section-kort {
     position: relative;
     max-width: 100%;
     margin-top: 15px;
 }
 
+/* Baggrund */
 .kort-baggrund {
     width: 100%;
     height: auto;
@@ -503,6 +507,7 @@ main h1{
     opacity: 50%;
 }
 
+/* Buttons */
 .kort-knapper {
     position: absolute;
     inset: 0;
@@ -520,15 +525,17 @@ main h1{
     justify-content: center;
     background-color: #6ABDA8;
     color: #000;
-    padding: 40px 30px;
-    min-height: 105px;
+    height: 105px;
     font-weight: bold;
     border-radius: 22px;
     text-decoration: none;
-    font-size: 1.35rem;
-    min-width: 350px;
+    padding: clamp(25px, 4vw, 40px);
+    font-size: clamp(1rem, 2.2vw, 1.35rem);
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: min(400px, 86vw);
+    max-width: 86vw;
+    font-style: normal;
 }
 
 .kort-knap:hover {
@@ -584,6 +591,16 @@ footer {
     color: #3a3a3a;
     line-height: 1.6;
     font-size: 0.9rem;
+    font-style: normal;
+}
+
+.sans-serif a{
+    text-decoration: none;
+    color: #3a3a3a;
+}
+
+.sans-serif a:hover{
+    color: #38806E;
 }
 
 /* knap */
@@ -644,18 +661,13 @@ footer {
     .btn{ min-height: 50px; max-width: 200px; font-size: 1.15rem;}
 
     .kort-knap {
-        min-width: auto;
-        width: 90%;
-        max-width: 280px;
-
-        padding: 20px 16px;
-        min-height: 64px;
-        font-size: 1.15rem;
-        border-radius: 16px;
+        max-width: 260px;
+        font-size: 1rem;
+        max-height: 30px;
     }
 
     .kort-knapper {
-        gap: 1.2rem;
+        gap: 0.8rem;
     }
 
     .plain h2{ margin-left: 20px; margin-right: 20px; }
@@ -814,6 +826,8 @@ footer {
 
     .footer-logo { margin-top: 0; }
 }
+
+
 
 
 

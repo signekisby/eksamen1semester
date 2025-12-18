@@ -10,6 +10,7 @@
 </head>
 <body>
 
+<!-- Header -->
 <header class="header">
     <nav class="nav">
 
@@ -41,14 +42,17 @@
 
 <main>
 
+    <!-- Starter tekst -->
     <div class="plain">
     <p class="tekst1">Har du spørgsmål, er du nysgerrig på Connected Starters eller vil du høre mere om events og aktiviteter?
         Du er altid velkommen til at kontakte os.
     </p>
     </div>
 
+    <!-- Overskrift -->
     <h1>Kontaktinformation</h1>
 
+    <!-- Kontaktoplysninger -->
     <div class="plain">
         <p class="mere-afstand">Lokationer: Slagelse, Køge og Næstved</p>
         <p>Slagelse tlf.: +45 50 76 20 56 {placeholder}</p>
@@ -57,55 +61,55 @@
         <p class="mere-afstand">E-mail: Connectedstarters@zealand.dk {placeholder}</p>
     </div>
 
+    <!-- SoMe links og overskrift -->
     <h3 class="mere-afstand2">Følg os på sociale medier for nyheder og kommende events</h3>
 
     <div class="SoMe-ikon">
         <a href="https://www.facebook.com/DIT_SIDENAVN" target="_blank" rel="noopener">
-            <img src="facebook%20ikon.webp" height="1280" width="1280" alt="Facebook">
+            <img src="facebook%20ikon.webp" height="1280" width="1280" alt="Facebook" aria-label="facebook">
         </a>
 
         <a href="https://www.instagram.com/DIT_BRUGERNAVN" target="_blank" rel="noopener">
-            <img src="Instagram_icon.png.webp" height="2048" width="2048" alt="Instagram">
+            <img src="Instagram_icon.png.webp" height="2048" width="2048" alt="Instagram" aria-label="instagram">
         </a>
     </div>
 
+
+    <!-- Overskrift - Adresse -->
     <h2 class="plain">Adresse</h2>
 
-    <div class="section-kort">
-        <img src="kort.jpg" alt="Kort over Danmark" class="kort-baggrund">
+    <!-- Adresse der fører til google maps -->
+    <section class="section-kort">
+        <img class="kort-baggrund" src="kort.jpg" alt="Kort over Danmark til pynt" aria-hidden="true" >
 
-        <div class="kort-knapper">
-            <a
-                    class="kort-knap"
-                    href="https://www.google.com/maps/search/?api=1&query=Lyngvej+21,+4600+Køge"
-                    target="_blank"
-                    rel="noopener">
-                Lyngvej 21, 4600 Køge
-            </a>
+        <address class="kort-knapper">
+            <p><a class="kort-knap"
+                   href="https://www.google.com/maps/search/?api=1&query=Lyngvej+21,+4600+Køge"
+                   target="_blank"
+                   rel="noopener">
+                    Lyngvej 21, 4600 Køge
+                </a></p>
 
-            <a
-                    class="kort-knap"
-                    href="https://www.google.com/maps/search/?api=1&query=Bredahlsgade+1,+4200+Slagelse"
-                    target="_blank"
-                    rel="noopener">
-                Bredahlsgade 1, 4200 Slagelse
-            </a>
+            <p><a class="kort-knap"
+                   href="https://www.google.com/maps/search/?api=1&query=Bredahlsgade+1,+4200+Slagelse"
+                        target="_blank"
+                        rel="noopener">
+                    Bredahlsgade 1, 4200 Slagelse
+                </a></p>
 
-            <a
-                    class="kort-knap"
-                    href="https://www.google.com/maps/search/?api=1&query=Femøvej+3,+4700+Næstved"
-                    target="_blank"
-                    rel="noopener">
-                Femøvej 3, Næstved
-            </a>
-        </div>
-    </div>
-
-
-
+            <p><a class="kort-knap"
+                  href="https://www.google.com/maps/search/?api=1&query=Femøvej+3,+4700+Næstved"
+                  target="_blank"
+                  rel="noopener">
+                Femøvej 3, 4700 Næstved
+                </a></p>
+        </address>
+    </section>
 
 </main>
 
+
+<!-- Footer -->
 <footer>
     <div class="footer-text">
         <div class="serif">
@@ -113,12 +117,12 @@
             <p>Cvr: {placeholder}</p>
         </div>
 
-        <div class="sans-serif">
-            <p>Slagelse tlf.: +45 50 76 20 56 {placeholder}</p>
-            <p>Køge tlf.: +45 50 76 20 68 {placeholder}</p>
-            <p>Næstved tlf.: +45 50 76 20 87 {placeholder}</p>
-            <p class="email">E-mail: Connectedstarters@zealand.dk {placeholder}</p>
-        </div>
+        <address class="sans-serif">
+            <p>Slagelse tlf.:<a href="tel:+4550762056">+45 50 76 20 56</a></p>
+            <p>Køge tlf.:<a href="tel:+4550762068">+45 50 76 20 68</a></p>
+            <p>Næstved tlf.:<a href="tel:+4550762087">+45 50 76 20 87</a></p>
+            <p class="email">E-mail:<a href="mailto:connectedstarters@zealand.dk">connectedstarters@zealand.dk</a></p>
+        </address>
 
         <div class="footer-button">
             <a href="kontakt.html" class="btn-link">
